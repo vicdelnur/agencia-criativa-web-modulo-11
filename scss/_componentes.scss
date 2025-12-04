@@ -1,0 +1,84 @@
+// ============================
+// Componentes: Cards, Formulário, Portfolio
+// ============================
+
+// CARDS
+.cards {
+  display: flex;
+  gap: $space-md;
+  flex-wrap: wrap;
+  margin: $space-md 0;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: $radius-md;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  flex: 1 1 300px;
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  &__description {
+    color: $color-text;
+  }
+
+  &--highlight {
+    border: 2px solid $color-primary;
+  }
+}
+
+// PORTFOLIO
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+
+  &__item {
+    img {
+      width: 100%;
+      border-radius: $radius-md;
+      transition: 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+// FORM CONTATO
+.contact {
+  background-color: #f9f9f9;
+  padding: $space-md;
+  border-radius: $radius-md;
+  margin: $space-md 0;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+  }
+
+  &__input,
+  &__textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: $radius-sm;
+  }
+
+  &__button {
+    @include button();
+  }
+}
